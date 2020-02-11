@@ -8,3 +8,12 @@ class Buy(models.Model):
 
 def __str__(self):
   return self.name  
+
+class Register(models.Model):
+  username = models.CharField(max_length=100)
+  password = models.CharField(max_length=100)
+  email = models.CharField(max_length=100)
+  phone = models.IntegerField()
+
+def __str__(self):
+  return self.username   

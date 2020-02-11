@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {{time}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Album example </title>
+    <title>Album example · Bootstrap</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -54,9 +55,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{% url 'register' %}">register</a>
-           
+            <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">register</a>
+            
             
           </div>
         </div>
@@ -66,36 +67,41 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1>welcome to our shop</h1>
-      <a href="milto:parisafarivash@gmail.com" class="btn btn-primary my-2">Gmail me</a>
-    </div>
-  </section>
-
+  
   <div class="album py-5 bg-light">
     <div class="container">
+      <h2>signup </h2>
 
       <div class="row">
-        {% for b in buys.all %}
-        <img src="{{b.image.url}}"/>
-        <hr/>
-        name: {{b.name}}
-        <br/>
-        <br/>
-        price:{{b.price}}
-        <br/>
-        <br/>
-        stock: {{b.stock}}
-        <hr/>
-        <a href=""><input type="submit" value="buy"></a><br/>
-        <hr/>
-        {% endfor %}
+          
+        <form action="" >
+          <div class="form_group">
+            <label>username</label>
+            {{form.username}}
+          </div>
+          <div class="form_group">
+            <labal>password</labal>
+            {{form.password}}
 
+          </div>
+          <div class="form_group">
+            <label>email</label>
+            {{form.email}}
+
+          </div>
+          <div class="form_group">
+            <label>phone</label>
+            {{form.phone}}
+          </div> 
+          <input type="submit" value="send"><br/>    
+          <input type="radio" name="gender" value="male">male<br/>
+          <input type="radio" name="gender" value="famale">famale<br/>
+
+        </form>
       </div>
     </div>
   </div>      
-
+        
 
 </main>
 
